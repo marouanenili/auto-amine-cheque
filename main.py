@@ -81,7 +81,7 @@ class check_auto_amine():
         self.x_montant = 450
         self.y_montant = 800
         self.x_name = 350
-        self.y_name = 750
+        self.y_name = 760
         self.x_amount_in_letters = 430
         self.y_amount_in_letters = 735
         self.x_lieu_et_date = 250
@@ -92,7 +92,7 @@ class check_auto_amine():
 
     def write_all(self):
         pdf = canvas.Canvas("check.pdf")
-        draw_lines(pdf)
+
         write_check_date(pdf,self.x_date,self.y_date,self.date)
         write_check_montant(pdf,self.x_montant,self.y_montant,self.amount)
         write_check_name(pdf,self.x_name,self.y_name,self.name)
@@ -111,21 +111,21 @@ class effet_marpia():
         self.cause = cause
         self.taille = 10
         self.x_name = 250
-        self.y_name = 770
+        self.y_name = 760
         self.x_date_et_lieu = 250
         self.y_date_et_lieu = 735
         self.x_cause = 250
         self.y_cause = 710
         self.x_montant = 450
-        self.y_montant = 700
+        self.y_montant = 715
         self.x_amount_in_letters = 430
         self.y_amount_in_letters = 685
         self.x_date = 460
-        self.y_date = 725
+        self.y_date = 735
 
     def write_all(self):
         pdf = canvas.Canvas("check.pdf")
-        draw_lines(pdf)
+
         write_check_name(pdf,self.x_name,self.y_name,self.name)
         write_check_lieu_et_date(pdf,self.x_date_et_lieu,self.y_date_et_lieu,self.lieu_et_date)
         write_check_cause(pdf,self.x_cause,self.y_cause,self.cause)
@@ -153,7 +153,6 @@ class check_marpia():
 
     def write_all(self):
         pdf = canvas.Canvas("check.pdf")
-        draw_lines(pdf)
         write_check_name(pdf,self.x_name,self.y_name,self.name)
         write_string(pdf,self.x_lieu,self.y_lieu,self.lieu)
 
@@ -161,5 +160,3 @@ class check_marpia():
         write_check_date(pdf,self.x_date,self.y_date,self.date)
         pdf.save()
 
-check = effet_marpia("amine", 1000, "12/12/2012", "maroc", "cause")
-check.write_all()
